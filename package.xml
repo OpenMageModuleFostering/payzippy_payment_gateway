@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+    <name>PayZippy_Payment_Gateway</name>
+    <version>0.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Enable Credit/Debit Card, Net Banking, EMI and Wallet payments on your online store with PayZippy.</summary>
+    <description>PayZippy is an India based payment gateway provider which enables you to accept Credit/Debit Card, Net Banking, EMI and Wallet payments on your online store with the simplest and fastest integration.&#xD;
+&#xD;
+PayZippy's advantages:&#xD;
+Higher Conversions - Benefit from our smart transaction routing and intuitive payment experience, that drives higher success rates and lower cart abandonments for your online store. &#xD;
+User Experience Redefined - Let your customers enter their card details without leaving your website. Offer the fastest checkout experience by enabling your customers to use their cards saved in their PayZippy wallet.&#xD;
+Great Merchant Support - We bring Flipkart's customer obsessed service and learnings from solving payment issues. We are available 9 AM to 9 PM, all days of the week.&#xD;
+100% Secure - PayZippy has undergone stringent security audits (including PCI DSS) by industry experts. PayZippy's real time risk engine analyses every transaction across 50+ risk parameters and notifies you about suspected fraudulent transactions by email/sms.&#xD;
+Simple Transparent Pricing - No setup fee, no annual maintenance fee, no hidden charges. Pay less as you grow.&#xD;
+If you have any queries or require more information about our service offering, feel free to reach out to us at contactus@payzippy.com.</description>
+    <notes>Initial and Stable Release</notes>
+    <authors><author><name>Cueblocks</name><user>Ravinder</user><email>ravinder.singh@cueblocks.com</email></author></authors>
+    <date>2013-08-30</date>
+    <time>11:46:16</time>
+    <contents><target name="magecommunity"><dir name="FlipKart"><dir name="PayZippy"><dir name="Block"><file name="Form.php" hash="639321ea25419f962538ac89381d2b51"/><file name="Info.php" hash="d7b2736958e1843501b6b2751329378b"/><file name="Redirect.php" hash="71dbcd1edf529cba68db40fd3dc204fa"/></dir><dir name="Helper"><file name="Data.php" hash="1b17cddfc16a49371c7fa804f3326660"/></dir><dir name="Model"><dir name="Mysql4"><file name="Setup.php" hash="8adc2ac49e33c5f85daeb4c107387e14"/></dir><file name="Standard.php" hash="cd14e0d14457ac5f95a55a99e605a56c"/><dir name="System"><dir name="Config"><dir name="Source"><dir name="Payment"><dir name="Bank"><file name="Names.php" hash="6740c20c072b0ce964203e84789cb9e7"/></dir><file name="Methods.php" hash="a32152f6f96fa082eecb3c186b085963"/></dir></dir></dir></dir></dir><dir name="controllers"><file name="PaymentController.php" hash="c289d0e8302b3286b52cf626253b461f"/></dir><dir name="etc"><file name="config.xml" hash="bc09910bc88a8db0d576ab3a31771254"/><file name="system.xml" hash="cea2262317135a8d712f9ea37c47faa0"/></dir><dir name="sql"><dir name="payzippy_setup"><file name="mysql4-install-0.1.0.php" hash="c69266c1d23fe4d66405835ea60c932e"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="payzippy"><file name="form.phtml" hash="05dd9f7b97f98f58e3cbf4fd9d589cc4"/><file name="redirect.phtml" hash="0e2722a6012d1e6859d9275d4b09683d"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="FlipKart_PayZippy.xml" hash="6a9b3027607fb0c3212e9a829d61fa15"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

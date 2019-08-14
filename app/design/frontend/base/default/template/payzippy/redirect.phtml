@@ -1,0 +1,19 @@
+<?php
+$secret_key     = Mage::helper('payzippy')->getConfigData('secret_key');
+$params         = $this->getRequestParams();
+$hash           = Mage::helper('payzippy')->getHash($params,$secret_key);
+$params['hash'] = $hash;
+$session = Mage::getSingleton("core/session",  array("name"=>"frontend"));
+$session->setData($params['merchant_transaction_id'], $hash);
+if(Mage::helper('payzippy')->getConfigData('debug')) {
+    Mage::log("Request:- ".print_r($params, true), Zend_Log::DEBUG, 'payzippy.log', true);
+}
+?>
+   <form name="payzippyform" method="post" action="https://www.payzippy.com/payment/api/charging/v1">
+    <?php foreach($params as $param_name => $param_value):?>
+	<input type="hidden" name="<?php echo $param_name?>" value="<?php echo $param_value; ?>" />
+    <?php endforeach;?>
+   </form>
+<script type="text/javascript">
+document.payzippyform.submit();
+</script>

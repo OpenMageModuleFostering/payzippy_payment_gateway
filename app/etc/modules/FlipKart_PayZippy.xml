@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <FlipKart_PayZippy>
+            <active>true</active>
+            <codePool>community</codePool>
+        </FlipKart_PayZippy>
+        <depends>
+        	<Mage_Payment />
+      	</depends>
+    </modules>
+</config>
