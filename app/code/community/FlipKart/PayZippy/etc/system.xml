@@ -92,7 +92,7 @@
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
             </udf5>
-            <payment_methods translate="label">
+            <!-- <payment_methods translate="label">
               <label>Allowed payment methods</label>
               <frontend_type>multiselect</frontend_type>
               <source_model>payzippy/system_config_source_payment_methods</source_model>
@@ -120,7 +120,7 @@
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
               <comment>Will applicable only if NET banking is enabled</comment>
-            </net_bank_names>
+            </net_bank_names> -->
             <order_status translate="label">
               <label>New Order Status</label>
               <frontend_type>select</frontend_type>

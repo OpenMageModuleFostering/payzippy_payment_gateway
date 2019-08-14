@@ -41,13 +41,13 @@ class FlipKart_PayZippy_Block_Redirect extends Mage_Checkout_Block_Onepage_Abstr
     	$params['hash_method']             = "MD5";
     	$params['merchant_key_id']         = Mage::helper('payzippy')->getConfigData('merchant_key_id');
     	$params['callback_url']            = Mage::getUrl('payzippy/payment/response',array('_secure'=>true));
-    	$params['payment_method']          = $payment_data['payzippy_payment_method'];
-    	if(!empty ($payment_data['payzippy_bank_name'])):
-    		$params['bank_name']           = $payment_data['payzippy_bank_name'];
-    	endif;
-    	if(!empty ($payment_data['payzippy_emi_months'])):
-    		$params['emi_months']          = $payment_data['payzippy_emi_months'];
-    	endif;
+    	// $params['payment_method']          = $payment_data['payzippy_payment_method'];
+    	// if(!empty ($payment_data['payzippy_bank_name'])):
+    	// 	$params['bank_name']           = $payment_data['payzippy_bank_name'];
+    	// endif;
+    	// if(!empty ($payment_data['payzippy_emi_months'])):
+    	// 	$params['emi_months']          = $payment_data['payzippy_emi_months'];
+    	// endif;
 
         /*Optional Variables*/
 

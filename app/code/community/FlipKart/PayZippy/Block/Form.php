@@ -21,39 +21,39 @@ class FlipKart_PayZippy_Block_Form extends Mage_Payment_Block_Form {
     *Return all allowed payment methods for payzippy like EMI,Debit Card etc
     */
 
-    public function getAllowedMethods() {
-    	$available_methods = array();
-    	$methods  = Mage::getStoreConfig('payment/payzippy/payment_methods');
-    	$methods = explode(',',$methods);
-    	$label_codes = Mage::getSingleton('payzippy/system_config_source_payment_methods')->toOptionArray();
-        $availables = array();
-        foreach($methods as $method) {
-            foreach($label_codes as $label) {
-                if($label['value'] == $method) {
-                    $availables[] = $label;
-                }
-            }
-        }
-        return $availables;	
-    }
+    // public function getAllowedMethods() {
+    // 	$available_methods = array();
+    // 	$methods  = Mage::getStoreConfig('payment/payzippy/payment_methods');
+    // 	$methods = explode(',',$methods);
+    // 	$label_codes = Mage::getSingleton('payzippy/system_config_source_payment_methods')->toOptionArray();
+    //     $availables = array();
+    //     foreach($methods as $method) {
+    //         foreach($label_codes as $label) {
+    //             if($label['value'] == $method) {
+    //                 $availables[] = $label;
+    //             }
+    //         }
+    //     }
+    //     return $availables;	
+    // }
     
-    /*
-    *Return allowed bank names for either payment method Net banking or EMI 
-    */
+    
+    // *Return allowed bank names for either payment method Net banking or EMI 
+    
 
-    public function getBankNames($paymentMethod) {        
-        $bankCodes = Mage::getStoreConfig('payment/payzippy/'.$paymentMethod);
-        $bankCodes =  explode(',', $bankCodes);
-        $bankLabels = Mage::getSingleton('payzippy/system_config_source_payment_bank_names')->toOptionArray();
-        $availables = "";
-        foreach($bankCodes as $code) {
-            foreach($bankLabels as $label) {
-                if($label['value'] == $code) {
-                    $availables.= '<option value="'.$label["value"].'">'.$label["label"].'</option>';
-                }
-            }
-        }
-        return $availables;
-    }
+    // public function getBankNames($paymentMethod) {        
+    //     $bankCodes = Mage::getStoreConfig('payment/payzippy/'.$paymentMethod);
+    //     $bankCodes =  explode(',', $bankCodes);
+    //     $bankLabels = Mage::getSingleton('payzippy/system_config_source_payment_bank_names')->toOptionArray();
+    //     $availables = "";
+    //     foreach($bankCodes as $code) {
+    //         foreach($bankLabels as $label) {
+    //             if($label['value'] == $code) {
+    //                 $availables.= '<option value="'.$label["value"].'">'.$label["label"].'</option>';
+    //             }
+    //         }
+    //     }
+    //     return $availables;
+    // }
 }
 ?>

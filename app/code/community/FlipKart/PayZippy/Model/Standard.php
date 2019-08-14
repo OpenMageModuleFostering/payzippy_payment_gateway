@@ -30,19 +30,19 @@ class FlipKart_PayZippy_Model_Standard extends Mage_Payment_Model_Method_Abstrac
             if (!($data instanceof Varien_Object)) {
                 $data = new Varien_Object($data);
             }
-            $info = $this->getInfoInstance();
+            // $info = $this->getInfoInstance();
            
-            $payment_method = $data->getPayzippyPaymentMethod();
+            // $payment_method = $data->getPayzippyPaymentMethod();
             
-            $info->setPayzippyPaymentMethod($payment_method);
+            // $info->setPayzippyPaymentMethod($payment_method);
            
-            if($payment_method == 'NET' || $payment_method == 'EMI') {
-                $info->setPayzippyBankName($data->getPayzippyBankName());
-            }
+            // if($payment_method == 'NET' || $payment_method == 'EMI') {
+            //     $info->setPayzippyBankName($data->getPayzippyBankName());
+            // }
             
-            if($payment_method == 'EMI') {
-                $info->setPayzippyEmiMonths($data->getPayzippyEmiMonths());
-            }
+            // if($payment_method == 'EMI') {
+            //     $info->setPayzippyEmiMonths($data->getPayzippyEmiMonths());
+            // }
             
             return $this;
         }
@@ -52,25 +52,25 @@ class FlipKart_PayZippy_Model_Standard extends Mage_Payment_Model_Method_Abstrac
         */
 
  
-        public function validate()
-        {
-            parent::validate();
+        // public function validate()
+        // {
+        //     parent::validate();
             
-            $errorMsg = "";
+        //     $errorMsg = "";
             
-            $info = $this->getInfoInstance();
+        //     $info = $this->getInfoInstance();
 
-            $payment_method = $info->getPayzippyPaymentMethod();
+        //     $payment_method = $info->getPayzippyPaymentMethod();
            
-            if(empty($payment_method)){
-                $errorCode = 'invalid_data';
-                $errorMsg = $this->_getHelper()->__('Payment Method is required field');
-            }
+        //     if(empty($payment_method)){
+        //         $errorCode = 'invalid_data';
+        //         $errorMsg = $this->_getHelper()->__('Payment Method is required field');
+        //     }
 
-            if($errorMsg){
-                Mage::throwException($errorMsg);
-            }
-            return $this;
-        }
+        //     if($errorMsg){
+        //         Mage::throwException($errorMsg);
+        //     }
+        //     return $this;
+        // }
 }
 ?>
