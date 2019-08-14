@@ -38,14 +38,22 @@ class FlipKart_PayZippy_PaymentController extends Mage_Core_Controller_Front_Act
             $hash_recievd     = $response['hash'];
             $payzippy_transid = $response['payzippy_transaction_id'];
             $payment_method   = $response['payment_method'];
+            $payment_instrument   = $response['payment_instrument'];
+            $bank_name        = $response['bank_name'];
+            $emi_months       = $response['emi_months'];
+            if($emi_months == '')
+                $emi_months       = 'N/A';
             $trans_status     = htmlentities($response['transaction_status']);
             $orderId          = $response['merchant_transaction_id'];
             $message          = htmlentities($response['transaction_response_message']);
             $is_international = $response['is_international'];
             $fraud_action     = $response['fraud_action'];
+            $fraud_detials    = $response['fraud_details'];
+            if($fraud_details == '')
+                $fraud_details = 'Accept';
             $allow            = array('SUCCESS','INITIATED','PENDING');
             $configured_order_status     = Mage::helper('payzippy')->getConfigData('order_status');
-            $comment          = 'PayZippy Transaction Id : '.$payzippy_transid.'<br/>'.'Payment Method : '.$payment_method.'<br/>'.'Transaction Status : '.$trans_status.'<br/>'.'Transaction Response Code : '.$validated.'<br/>'.'Transaction Response Message : '.$message.'<br/>'.'Is_International : '.$is_international.'<br/>'.'Fraud Action : '.$fraud_action;
+            $comment          = 'PayZippy Transaction Id : '.$payzippy_transid.'<br/>'.'Payment Method : '.$payment_method.'<br/>'.'Payment Instrument : '.$payment_instrument.'<br/>'.'Bank Name : '.$bank_name.'<br/>'.'EMI Months : '.$emi_months.'<br/>'.'Transaction Status : '.$trans_status.'<br/>'.'Transaction Response Code : '.$validated.'<br/>'.'Transaction Response Message : '.$message.'<br/>'.'Is_International : '.$is_international.'<br/>'.'Fraud Action : '.$fraud_action.'<br/>'.'Fraud Details : '.$fraud_details;
             unset($response['hash']);
             $hash_generated   = Mage::helper('payzippy')->getHash($response,Mage::helper('payzippy')->getConfigData('secret_key'));
         

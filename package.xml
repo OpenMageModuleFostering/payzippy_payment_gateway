@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>PayZippy_Payment_Gateway</name>
-    <version>0.1.6</version>
+    <version>0.1.7</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
@@ -22,11 +22,11 @@
 &lt;/ul&gt;&#xD;
 &lt;/div&gt;&#xD;
 &lt;div&gt;&lt;span&gt;If you have any queries or require more information about our service offering, feel free to reach out to us at &lt;strong&gt;&lt;a href="mailto:contactus@payzippy.com"&gt;contactus@payzippy.com&lt;/a&gt;&lt;/strong&gt;.&lt;/span&gt;&lt;/div&gt;</description>
-    <notes>Bug fixed</notes>
+    <notes>Added payment instrument, bank name, fraud details, emi months in comment field under the order section.</notes>
     <authors><author><name>Subham Khandelwal</name><user>PayZippy</user><email>subham.khandelwal@flipkart.com</email></author></authors>
-    <date>2014-02-04</date>
-    <time>10:08:41</time>
-    <contents><target name="magecommunity"><dir name="FlipKart"><dir name="PayZippy"><dir name="Block"><file name="Form.php" hash="cc14cdb6f170b687fe38c7bd9c73ec2b"/><file name="Info.php" hash="d7b2736958e1843501b6b2751329378b"/><file name="Redirect.php" hash="a89aa5c851b0ffde033e6fa66b35b8c1"/></dir><dir name="Helper"><file name="Data.php" hash="1b17cddfc16a49371c7fa804f3326660"/></dir><dir name="Model"><dir name="Mysql4"><file name="Setup.php" hash="8adc2ac49e33c5f85daeb4c107387e14"/></dir><file name="Standard.php" hash="ae4a800a3d99aa9841a450fdf0058f37"/><dir name="System"><dir name="Config"><dir name="Source"><dir name="Payment"><dir name="Bank"><file name="Names.php" hash="6740c20c072b0ce964203e84789cb9e7"/></dir><file name="Methods.php" hash="d09501065f232fa99b9c9f2085995038"/></dir></dir></dir></dir></dir><dir name="controllers"><file name="PaymentController.php" hash="4eabccff8b6d683b213f03f4ce42724c"/></dir><dir name="etc"><file name="config.xml" hash="2c468269d5892a95c75fd92c2a36c6a3"/><file name="system.xml" hash="8e9ce94a93b6c1af6295066e5c7f2a18"/></dir><dir name="sql"><dir name="payzippy_setup"><file name="mysql4-install-0.1.0.php" hash="c69266c1d23fe4d66405835ea60c932e"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="payzippy"><file name="form.phtml" hash="0c29fd4ac905fa95357cb3bb60a283aa"/><file name="redirect.phtml" hash="0e2722a6012d1e6859d9275d4b09683d"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="FlipKart_PayZippy.xml" hash="6a9b3027607fb0c3212e9a829d61fa15"/></dir></target></contents>
+    <date>2014-02-26</date>
+    <time>06:35:02</time>
+    <contents><target name="magecommunity"><dir name="FlipKart"><dir name="PayZippy"><dir name="Block"><file name="Form.php" hash="cc14cdb6f170b687fe38c7bd9c73ec2b"/><file name="Info.php" hash="d7b2736958e1843501b6b2751329378b"/><file name="Redirect.php" hash="a89aa5c851b0ffde033e6fa66b35b8c1"/></dir><dir name="Helper"><file name="Data.php" hash="1b17cddfc16a49371c7fa804f3326660"/></dir><dir name="Model"><dir name="Mysql4"><file name="Setup.php" hash="8adc2ac49e33c5f85daeb4c107387e14"/></dir><file name="Standard.php" hash="ae4a800a3d99aa9841a450fdf0058f37"/><dir name="System"><dir name="Config"><dir name="Source"><dir name="Payment"><dir name="Bank"><file name="Names.php" hash="6740c20c072b0ce964203e84789cb9e7"/></dir><file name="Methods.php" hash="d09501065f232fa99b9c9f2085995038"/></dir></dir></dir></dir></dir><dir name="controllers"><file name="PaymentController.php" hash="0a7bd46d156418d01c0ea62611fd7a73"/><file name=".DS_Store" hash="7c08f2776e846e79949e04e1ec01ca04"/></dir><dir name="etc"><file name="config.xml" hash="2c468269d5892a95c75fd92c2a36c6a3"/><file name="system.xml" hash="8e9ce94a93b6c1af6295066e5c7f2a18"/></dir><dir name="sql"><dir name="payzippy_setup"><file name="mysql4-install-0.1.0.php" hash="c69266c1d23fe4d66405835ea60c932e"/></dir></dir><file name=".DS_Store" hash="5d37388646fb276dee8b8c1b8947f5fd"/></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="payzippy"><file name="form.phtml" hash="0c29fd4ac905fa95357cb3bb60a283aa"/><file name="redirect.phtml" hash="0e2722a6012d1e6859d9275d4b09683d"/><file name=".DS_Store" hash="94517cd9eb8806be2159de2a13b500e0"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="FlipKart_PayZippy.xml" hash="6a9b3027607fb0c3212e9a829d61fa15"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
