@@ -44,6 +44,7 @@ class FlipKart_PayZippy_PaymentController extends Mage_Core_Controller_Front_Act
             $is_international = $response['is_international'];
             $fraud_action     = $response['fraud_action'];
             $allow            = array('SUCCESS','INITIATED','PENDING');
+            $configured_order_status     = Mage::helper('payzippy')->getConfigData('order_status');
             $comment          = 'PayZippy Transaction Id : '.$payzippy_transid.'<br/>'.'Payment Method : '.$payment_method.'<br/>'.'Transaction Status : '.$trans_status.'<br/>'.'Transaction Response Code : '.$validated.'<br/>'.'Transaction Response Message : '.$message.'<br/>'.'Is_International : '.$is_international.'<br/>'.'Fraud Action : '.$fraud_action;
             unset($response['hash']);
             $hash_generated   = Mage::helper('payzippy')->getHash($response,Mage::helper('payzippy')->getConfigData('secret_key'));
@@ -52,7 +53,11 @@ class FlipKart_PayZippy_PaymentController extends Mage_Core_Controller_Front_Act
                 // Payment was successful, so update the order's state, send order email and move to the success page
                 $order = Mage::getSingleton('sales/order');
                 $order->loadByIncrementId($orderId);
-                $order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true, $comment);
+                $order_status = Mage_Sales_Model_Order::STATE_PROCESSING;
+                if($configured_order_status == 'pending') {
+                    $order_status = Mage_Sales_Model_Order::STATE_PENDING_PAYMENT;
+                }
+                $order->setState($order_status, true, $comment);
                 
                 $order->sendNewOrderEmail();
                 $order->setEmailSent(true);
