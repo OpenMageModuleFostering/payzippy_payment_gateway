@@ -34,13 +34,13 @@ class FlipKart_PayZippy_PaymentController extends Mage_Core_Controller_Front_Act
             Mage::log("Response:- ".print_r($response, true), Zend_Log::DEBUG, 'payzippy.log', true);
         }
         if (isset($response)) {
-            $validated        = $response['transaction_response_code'];
+            $validated        = htmlentities($response['transaction_response_code']);
             $hash_recievd     = $response['hash'];
             $payzippy_transid = $response['payzippy_transaction_id'];
             $payment_method   = $response['payment_method'];
-            $trans_status     = $response['transaction_status'];
+            $trans_status     = htmlentities($response['transaction_status']);
             $orderId          = $response['merchant_transaction_id'];
-            $message          = $response['transaction_response_message'];
+            $message          = htmlentities($response['transaction_response_message']);
             $is_international = $response['is_international'];
             $fraud_action     = $response['fraud_action'];
             $allow            = array('SUCCESS','INITIATED','PENDING');
@@ -66,7 +66,7 @@ class FlipKart_PayZippy_PaymentController extends Mage_Core_Controller_Front_Act
                 ));
             } else {
                 // There is a problem in the response we got
-                Mage::getSingleton('core/session')->addError($message);
+                Mage::getSingleton('core/session')->addError(htmlentities($message));
                 $this->cancelAction($comment);
                 Mage_Core_Controller_Varien_Action::_redirect('checkout/onepage/failure', array(
                     '_secure' => true
