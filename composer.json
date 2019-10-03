@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/PayZippy_Payment_Gateway",
+    "name": "openmage-module-fostering\/payzippy_payment_gateway",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Enable Credit\/Debit Card, Net Banking, EMI and Wallet payments on your online store with PayZippy.",
     "authors": [
